@@ -81,94 +81,78 @@
 				<section>
 					<h2>What's SMACSS?</h2>
                     <ul>
-                        <li>A Style guide</li>
-                        <li>A Collection of CSS design patterns</li>
+                        <li>Style guide</li>
+                        <li>Collection of CSS design patterns</li>
                         <li class="fragment">What it isn't: A library or a framework</li>
                     </ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon.css#/themes">Moon</a> -
-						<a href="?theme=simple.css#/themes">Simple</a> -
-						<a href="?theme=solarized.css#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
+					<h2>Basics</h2>
+                    <ul>
+                        <li>Split CSS into multiple files</li>
+                        <li class="fragment">What goes where?</li>
+                    </ul>
 				</section>
 
 				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
+					<h2>What goes where?</h2>
+                    <ul>
+                        <li>5 categories of CSS rules:
+                            <ol>
+                                <li class="fragment">Base</li>
+                                <li class="fragment">Layout</li>
+                                <li class="fragment">Module</li>
+                                <li class="fragment">State</li>
+                                <li class="fragment">Theme</li>
+                            </ol>
+                        </li>
+                        <li class="fragment">Let's go through these categories in detail</li>
+                    </ul>
 				</section>
 
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
+                <section>
+                    <h2>Base</h2>
+                    <ul>
+                        <li>Default styling of your app</li>
+                        <li>Element selectors and pseudo classes only</li>
+                        <li>No class or ID selectors</li>
+                        <li>CSS resets</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Base</h2>
+                    <p>Example:</p>
+<pre><code>
+    body, form {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: blue;
+    }
+
+    a:hover {
+        color: green;
+    }
+</code></pre>
+                </section>
+
+
+
+
+
+                <section>
+                    <h2>Miscellaneous</h2>
+                    <ul>
+                        <li>Try to avoid !important</li>
+                        <li class="fragment">Never ever use !important in a base rule</li>
+                    </ul>
+                </section>
+
+
 
 				<section>
 					<section data-background="#007777">
