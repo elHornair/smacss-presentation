@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>SMACSS</title>
 
 		<meta name="description" content="A presentation on the SMACSS approach for building scalable and modular CSS">
 		<meta name="author" content="Alain Hornair">
@@ -115,6 +115,7 @@
                     <h2>Base</h2>
                     <ul>
                         <li>Default styling of your app</li>
+                        <li>General typography (h1, a, p, ...)</li>
                         <li>Element selectors and pseudo classes only</li>
                         <li>No class or ID selectors</li>
                         <li>CSS resets</li>
@@ -191,6 +192,180 @@
     }
 </code></pre>
                 </section>
+
+                <section>
+                    <h2>Module</h2>
+                    <ul>
+                        <li>Standalone component</li>
+                        <li>Can be used at multiple places</li>
+                        <li>Examples:
+                            <ul>
+                                <li>Slideshow</li>
+                                <li>Dialog</li>
+                                <li>Navigation bar</li>
+                                <li>...</li>
+                            </ul>
+                        </li>
+                        <li>Modules can be nested</li>
+                        <li class="fragment">Everything <strong>wrapped in CSS class</strong></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Module</h2>
+                    <p>Code example:</p>
+<pre><code>
+    .my_module {
+        background-color: red;
+    }
+</code></pre>
+                </section>
+
+                <section>
+                    <h2>Module</h2>
+                    <ul>
+                        <li>Use classes for descendants where possible</li>
+                        <li>Elements are ok as well</li>
+                        <li>ID's are not ok (portability!)</li>
+                        <li>Use direct descendant selector (&#62;) by default</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Module</h2>
+                    <p>Code example:</p>
+<pre><code>
+    .my_module {
+        background-color: red;
+    }
+
+    .my_module > h2 {
+        color: blue;
+    }
+</code></pre>
+                </section>
+
+                <section>
+                    <h2>Module namespacing</h2>
+                    <ul>
+                        <li>Namespacing modules
+                            <ul>
+                                <li>Descending classes are prefixed with module name</li>
+                                <li>Portability: what if the module occurs inside another module?</li>
+                                <li>Explicity: It's not just a title. It's the title of a dialog</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Module namespacing</h2>
+                    <p>Code example:</p>
+<pre><code>
+    .dialog {
+        background-color: red;
+    }
+
+    .dialog > dialog-title {
+        color: blue;
+    }
+</code></pre>
+                </section>
+
+                <section>
+                    <h2>Module subclassing</h2>
+                    <ul>
+                        <li>For different versions of the same module</li>
+                        <li>
+                            Example
+                            <ul>
+                                <li>main navigation and language switcher</li>
+                                <li>Both share font-family and colors</li>
+                                <li>However: different font-size</li>
+                            </ul>
+                        </li>
+                        <li>HTML: Both, module and submodule class get added to the container element</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Module subclassing</h2>
+                    <p>Code example:</p>
+<pre><code>
+    &#60;ul class="nav"&#62;
+        &#60;li&#62;One&#60;/li&#62;
+        &#60;li&#62;Two&#60;/li&#62;
+    &#60;/ul&#62;
+    &#60;ul class="nav nav-lang"&#62;
+        &#60;li&#62;DE&#60;/li&#62;
+        &#60;li&#62;FR&#60;/li&#62;
+    &#60;/ul&#62;
+
+</code></pre>
+
+<pre><code>
+    .nav {
+        font-family: Arial;
+        font-color: white;
+        font-size: 2em;
+    }
+
+    .nav.nav-lang {
+        font-size: 1.6em;
+    }
+
+</code></pre>
+                </section>
+
+                <section>
+                    <h2>Module subclassing</h2>
+                    <ul>
+                        <li>Context of modules</li>
+                        <li>Example: slideshow has to look different on homepage</li>
+                    </ul>
+                    <p class="fragment">
+                        <img src="img/trap.jpg">
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Module subclassing</h2>
+                    <ul>
+                        <li>What pops to mind: ".content_home .slideshow"</li>
+                        <li>Better: subclass</li>
+                        <li>Portability: slideshow on contact page looks the same?</li>
+                        <li>Independence: What if someone decides to remove the ".content_home" class?</li>
+                        <li>Encapsulation: All info within module container</li>
+                        <li class="fragment">However: more work in the backend</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Module subclassing</h2>
+                    <p>Bad example:</p>
+<pre><code>
+    .slideshow {
+        width: 480px;
+    }
+
+    .content_home .slideshow {
+        width: 100%;
+    }
+
+</code></pre>
+                    <p>Good example:</p>
+<pre><code>
+    .slideshow {
+        width: 480px;
+    }
+
+    .slideshow.slideshow-fullwidth {
+        width: 100%;
+    }
+
+</code></pre>
+                </section>
+
 
 
 
