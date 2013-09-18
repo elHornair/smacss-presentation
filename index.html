@@ -123,7 +123,7 @@
 
                 <section>
                     <h2>Base</h2>
-                    <p>Example:</p>
+                    <p>Code example:</p>
 <pre><code>
     body, form {
         margin: 0;
@@ -140,6 +140,64 @@
 </code></pre>
                 </section>
 
+                <section>
+                    <h2>Layout</h2>
+                    <ul>
+                        <li>Mayor components</li>
+                        <li>Mainly ID selectors</li>
+                        <li>Dedicated HTML elements like "header" or "footer"</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Layout</h2>
+                    <p>Example:</p>
+                    <img src="img/layout.png">
+                </section>
+
+                <section>
+                    <h2>Layout</h2>
+                    <p>Code example:</p>
+<pre><code>
+    #header, #section, #footer {
+        width: 960px;
+        margin: auto;
+    }
+    #section {
+        border: 1px solid #CCC;
+    }
+</code></pre>
+                </section>
+
+
+                <section>
+                    <h2>Layout</h2>
+                    <ul>
+                        <li>CSS selectors for different kinds of layouts</li>
+                        <li>E.g. "wide" and "normal" layout</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Layout</h2>
+                    <p>Code example:</p>
+<pre><code>
+    #section {
+        width: 100%;
+    }
+    .wide #section {
+        width: 80%;
+        float: left;
+    }
+</code></pre>
+                </section>
+
+
+
+
+
+
+
 
 
 
@@ -152,27 +210,6 @@
                     </ul>
                 </section>
 
-
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
 
 				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
 					<h2>Background Transitions</h2>
