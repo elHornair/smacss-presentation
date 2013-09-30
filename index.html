@@ -45,20 +45,6 @@
 				</section>
 
                 <section>
-                    <h2>Kudos</h2>
-                    <p>
-                        Most of what you're going to hear today was written by
-                        <a href="https://twitter.com/snookca">Jonathan Snook</a>. He has around 20 years of experience
-                        with frondend development. He has written many articles and multiple books. He worked at Yahoo,
-                        redesigning Yahoo! Mail.
-                    </p>
-                    <p>
-                        <strong>tl;dr: He knows what he's talking about. You must follow him
-                            on <a href="https://twitter.com/snookca">Twitter</a></strong>
-                    </p>
-                </section>
-
-                <section>
                     <h2>Where are we?</h2>
                     <ul>
                         <li class="fragment">99+% of web applications use CSS</li>
@@ -119,10 +105,10 @@
                     <h2>Base</h2>
                     <ul>
                         <li class="fragment">Default styling of your app</li>
+                        <li class="fragment">Reset rules (e.g. normalize.css)</li>
                         <li class="fragment">General typography (h1, a, p, ...)</li>
                         <li class="fragment">Element selectors and pseudo classes only</li>
                         <li class="fragment">No class or ID selectors</li>
-                        <li class="fragment">CSS resets</li>
                     </ul>
                 </section>
 
@@ -149,6 +135,7 @@
                     <h2>Layout</h2>
                     <ul>
                         <li>Major components</li>
+                        <li class="fragment">E.g. the header</li>
                         <li class="fragment">ID selectors</li>
                         <li class="fragment">Or dedicated HTML elements like "header" or "footer"</li>
                     </ul>
@@ -164,35 +151,12 @@
                     <h2>Layout</h2>
                     <p>Code example:</p>
 <pre><code>
-    #header, #section, #footer {
+    #header, #content, #footer {
         width: 960px;
         margin: auto;
     }
-    #section {
+    #content {
         border: 1px solid #CCC;
-    }
-</code></pre>
-                </section>
-
-
-                <section>
-                    <h2>Layout</h2>
-                    <ul>
-                        <li>CSS selectors for different kinds of layouts</li>
-                        <li class="fragment">E.g. "wide" and "normal" layout</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Layout</h2>
-                    <p>Code example:</p>
-<pre><code>
-    #section {
-        width: 100%;
-    }
-    .wide #section {
-        width: 80%;
-        float: left;
     }
 </code></pre>
                 </section>
@@ -251,33 +215,6 @@
                 </section>
 
                 <section>
-                    <h2>Module namespacing</h2>
-                    <ul>
-                        <li>Namespacing modules
-                            <ul>
-                                <li class="fragment">Descending classes are prefixed with module name</li>
-                                <li class="fragment">Portability: what if the module occurs inside another module?</li>
-                                <li class="fragment">Explicity: It's not just a title. It's the title of a dialog</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Module namespacing</h2>
-                    <p>Code example:</p>
-<pre><code>
-    .dialog {
-        background-color: red;
-    }
-
-    .dialog > .dialog-title {
-        color: blue;
-    }
-</code></pre>
-                </section>
-
-                <section>
                     <h2>Module subclassing</h2>
                     <ul>
                         <li class="fragment">For different versions of the same module</li>
@@ -289,6 +226,7 @@
                                 <li class="fragment">However: different font-size</li>
                             </ul>
                         </li>
+                        <li class="fragment">Module: "nav", Subclass: "nav-lang"</li>
                         <li class="fragment">HTML: Both, module and submodule class get added to the container element</li>
                     </ul>
                 </section>
@@ -337,7 +275,7 @@
                     <h2>Module subclassing</h2>
                     <ul>
                         <li class="fragment">What pops to mind: ".content_home .slideshow"</li>
-                        <li class="fragment">Better: subclass</li>
+                        <li class="fragment">This is bad. Better: create a subclass of the module</li>
                         <li class="fragment">Portability: slideshow on contact page looks the same?</li>
                         <li class="fragment">Independence: What if someone decides to remove the ".content_home" class?</li>
                         <li class="fragment">Encapsulation: All info within module container</li>
@@ -424,9 +362,8 @@
                 <section>
                     <h2>Misc / Summary</h2>
                     <ul>
-                        <li>Avoid !important</li>
+                        <li>Avoid !important whenever possible</li>
                         <li class="fragment"><strong>Never</strong> use !important in a base rule</li>
-                        <li class="fragment">Avoid them wherever possible</li>
                         <li class="fragment">Use ID selectors in "layout.css" only</li>
                         <li class="fragment">Base modules on class selectors (only)</li>
                         <li class="fragment">Refactor often</li>
