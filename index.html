@@ -94,7 +94,7 @@
                                 <li class="fragment">Layout</li>
                                 <li class="fragment">Module</li>
                                 <li class="fragment">State</li>
-                                <li class="fragment">Theme</li>
+                                <li class="fragment">Theme <span class="fragment">(not important)</span></li>
                             </ol>
                         </li>
                         <li class="fragment">Each category in it's own file</li>
@@ -195,9 +195,8 @@
                 <section>
                     <h2>Module</h2>
                     <ul>
-                        <li class="fragment">Use classes for descendants where possible</li>
-                        <li class="fragment">Elements are ok as well</li>
-                        <li class="fragment">ID's are not ok (portability!)</li>
+                        <li class="fragment">Classes or elements selectors for descendants</li>
+                        <li class="fragment">No ID's! (portability)</li>
                         <li class="fragment">Use direct descendant selector (&#62;) by default</li>
                     </ul>
                 </section>
@@ -219,7 +218,7 @@
                 <section>
                     <h2>Module subclassing</h2>
                     <ul>
-                        <li class="fragment">For different versions of the same module</li>
+                        <li class="fragment">Problem: slightly different version of the same module</li>
                         <li class="fragment">
                             Example
                             <ul>
@@ -228,6 +227,7 @@
                                 <li class="fragment">However: different font-size</li>
                             </ul>
                         </li>
+                        <li class="fragment">DRY!</li>
                         <li class="fragment">Module: "nav", Subclass: "nav-lang"</li>
                         <li class="fragment">HTML: Both, module and submodule class get added to the container element</li>
                     </ul>
@@ -267,6 +267,7 @@
                     <ul>
                         <li class="fragment">Context of modules</li>
                         <li class="fragment">Example: slideshow has to look different on homepage</li>
+                        <li class="fragment">Np, that's easy!</li>
                     </ul>
                     <p class="fragment">
                         <img src="img/trap.jpg">
@@ -279,7 +280,7 @@
                         <li class="fragment">What pops to mind: ".content_home .slideshow"</li>
                         <li class="fragment">What if slideshow on contact page needs to look the same? Or the slideshow in the sidebar?</li>
                         <li class="fragment">What if someone decides to remove/rename the ".content_home" class?</li>
-                        <li class="fragment">This is bad. Better: create a subclass of the module</li>
+                        <li class="fragment">Better idea: create a subclass of the module</li>
                         <li class="fragment">Encapsulation: All info within module container</li>
                         <li class="fragment">However: more work in the backend</li>
                     </ul>
@@ -348,15 +349,6 @@
     }
 
 </code></pre>
-                </section>
-
-                <section>
-                    <h2>Theme</h2>
-                    <ul>
-                        <li class="fragment">For applications with multiple themes</li>
-                        <li class="fragment">E.g. user can switch colors</li>
-                        <li class="fragment">When do we use that really?</li>
-                    </ul>
                 </section>
 
                 <section>
