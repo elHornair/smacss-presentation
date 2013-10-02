@@ -78,6 +78,8 @@
 				<section>
 					<h2>Basics</h2>
                     <ul>
+                        <li class="fragment">Avoid !important whenever possible</li>
+                        <li class="fragment">Refactor often</li>
                         <li class="fragment">Split CSS into multiple files</li>
                         <li class="fragment">What goes where?</li>
                     </ul>
@@ -275,9 +277,9 @@
                     <h2>Module subclassing</h2>
                     <ul>
                         <li class="fragment">What pops to mind: ".content_home .slideshow"</li>
+                        <li class="fragment">What if slideshow on contact page needs to look the same? Or the slideshow in the sidebar?</li>
+                        <li class="fragment">What if someone decides to remove/rename the ".content_home" class?</li>
                         <li class="fragment">This is bad. Better: create a subclass of the module</li>
-                        <li class="fragment">Portability: slideshow on contact page looks the same?</li>
-                        <li class="fragment">Independence: What if someone decides to remove the ".content_home" class?</li>
                         <li class="fragment">Encapsulation: All info within module container</li>
                         <li class="fragment">However: more work in the backend</li>
                     </ul>
@@ -312,9 +314,7 @@
                 <section>
                     <h2>State</h2>
                     <ul>
-                        <li class="fragment">State of the application</li>
-                        <li class="fragment">State of a module</li>
-                        <li class="fragment">Prefix with "is-"</li>
+                        <li class="fragment">State of the application/modules</li>
                         <li class="fragment">Examples:
                             <ul>
                                 <li class="fragment">is-hidden</li>
@@ -322,6 +322,7 @@
                                 <li class="fragment">is-collapsed</li>
                             </ul>
                         </li>
+                        <li class="fragment">Prefix with "is-"</li>
                         <li class="fragment">Layout specific states: state.css</li>
                         <li class="fragment">Module specific states: module file</li>
                         <li class="fragment">State classes: layout element or module container only</li>
@@ -349,24 +350,12 @@
 </code></pre>
                 </section>
 
-
                 <section>
                     <h2>Theme</h2>
                     <ul>
                         <li class="fragment">For applications with multiple themes</li>
                         <li class="fragment">E.g. user can switch colors</li>
                         <li class="fragment">When do we use that really?</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Misc / Summary</h2>
-                    <ul>
-                        <li>Avoid !important whenever possible</li>
-                        <li class="fragment"><strong>Never</strong> use !important in a base rule</li>
-                        <li class="fragment">Use ID selectors in "layout.css" only</li>
-                        <li class="fragment">Base modules on class selectors (only)</li>
-                        <li class="fragment">Refactor often</li>
                     </ul>
                 </section>
 
