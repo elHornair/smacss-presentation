@@ -68,9 +68,9 @@
 				<section>
 					<h2>What's SMACSS?</h2>
                     <ul>
+                        <li class="fragment">Collection of CSS design patterns</li>
                         <li class="fragment">Acronym: Scalable and modular architecture for CSS</li>
                         <li class="fragment">Style guide</li>
-                        <li class="fragment">Collection of CSS design patterns</li>
                         <li class="fragment">What it isn't: A library or a framework</li>
                     </ul>
 				</section>
@@ -315,18 +315,22 @@
                 <section>
                     <h2>State</h2>
                     <ul>
-                        <li class="fragment">State of the application/modules</li>
+                        <li class="fragment">Everything that can change while the application is used</li>
                         <li class="fragment">Examples:
                             <ul>
-                                <li class="fragment">is-hidden</li>
-                                <li class="fragment">is-active</li>
-                                <li class="fragment">is-collapsed</li>
+                                <li class="fragment">hidden class</li>
+                                <li class="fragment">active class</li>
+                                <li class="fragment">collapsed class</li>
                             </ul>
                         </li>
                         <li class="fragment">Prefix with "is-"</li>
+                            <ul>
+                                <li class="fragment">e.g. "is-active" or "is-collapsed"</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Depending on layout element or module container</li>
                         <li class="fragment">Layout specific states: state.css</li>
                         <li class="fragment">Module specific states: module file</li>
-                        <li class="fragment">State classes: layout element or module container only</li>
                     </ul>
                 </section>
 
